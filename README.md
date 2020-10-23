@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://marceau-jolisdegats.netlify.app/ ">
-  <img src="https://res.cloudinary.com/dqp905mfv/image/upload/v1603452120/portfolio/ReadMe/marceau_cdlfrb.jpg" alt ="Trainline - Banner"  />
+  <img src="https://res.cloudinary.com/dqp905mfv/image/upload/v1603452120/portfolio/ReadMe/marceau_cdlfrb.jpg" alt ="Marceau - Banner"  />
   </a>
 </p>
 <br/>
@@ -19,6 +19,11 @@ The demo of the project is currently hosted on Netlify (frontend). Have a look a
 
 <p>Made with the following stack:<br/>
 Frontend : React, axios, SASS</p>
+ <br/>
+
+<h2>Install</h2>
+
+<p>Just run <code>yarn</code> in your console to install all dependencies and <code>yarn start</code> to launch. Local demo should open on http://localhost:3000.</p>
  <br/>
 
 </p><h3>COMING SOON...</h3>
