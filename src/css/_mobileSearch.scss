@@ -1,0 +1,14 @@
+.mobileSearchWrapper {
+  z-index: 15;
+  background: black;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+
+  .closeButton {
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    margin: 2rem 2rem 4rem 2rem;
+  }
+}

@@ -1,0 +1,25 @@
+.searchBar {
+  display: flex;
+  justify-content: flex-end;
+
+  @include small {
+    justify-content: center;
+  }
+  input {
+    outline: none;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: solid 1px white;
+    padding: 0.5rem 1rem;
+    text-align: right;
+
+    @include small {
+      width: 15rem;
+    }
+
+    &::placeholder {
+      color: white;
+    }
+  }
+}

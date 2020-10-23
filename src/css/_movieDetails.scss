@@ -1,0 +1,214 @@
+.movieDetailsWrapper {
+  .backgroundImage {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    z-index: -10;
+    top: 0;
+    @include small {
+      height: 60vh;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      height: 10rem;
+      width: 100%;
+      bottom: 0%;
+      pointer-events: none;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.79) 8.1%,
+        rgba(0, 0, 0, 0.761) 15.5%,
+        rgba(0, 0, 0, 0.717) 22.5%,
+        rgba(0, 0, 0, 0.66) 29%,
+        rgba(0, 0, 0, 0.593) 35.3%,
+        rgba(0, 0, 0, 0.518) 41.2%,
+        rgba(0, 0, 0, 0.44) 47.1%,
+        rgba(0, 0, 0, 0.36) 52.9%,
+        rgba(0, 0, 0, 0.282) 58.8%,
+        rgba(0, 0, 0, 0.207) 64.7%,
+        rgba(0, 0, 0, 0.14) 71%,
+        rgba(0, 0, 0, 0.083) 77.5%,
+        rgba(0, 0, 0, 0.039) 84.5%,
+        rgba(0, 0, 0, 0.01) 91.9%,
+        transparent 100%
+      );
+    }
+    img {
+      width: 100%;
+    }
+  }
+
+  .movieDetailsContent {
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0%;
+    width: fit-content;
+    max-width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    @include normal {
+      max-width: 50%;
+    }
+    @include small {
+      background: rgba(0, 0, 0, 1);
+      top: 55%;
+      max-width: unset;
+      height: unset;
+      z-index: 10;
+      width: 100%;
+    }
+
+    .movieDetails {
+      padding: 15rem 5rem 5rem 5rem;
+
+      @include small {
+        padding: 5rem 5rem 5rem 5rem;
+      }
+
+      h2 {
+        font-size: 5rem;
+        line-height: 4.8rem;
+        margin-top: 5rem;
+        word-break: break-word;
+
+        @include small {
+          margin-top: 3rem;
+        }
+      }
+
+      .originalTitle {
+        margin-top: 2rem;
+        &:before {
+          content: "(";
+        }
+        &:after {
+          content: ")";
+        }
+      }
+
+      .tagline {
+        margin-top: 2rem;
+        font-style: italic;
+      }
+
+      .genres {
+        margin-top: 5rem;
+
+        span:not(:last-child):after {
+          content: " ● ";
+        }
+      }
+    }
+  }
+  .movieAdditionalInfosBlock {
+    padding: 5rem;
+    @include small {
+      padding: 0rem;
+    }
+    .movieAdditionalInfos {
+      max-width: 100rem;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border-top: $color-accent solid 15px;
+      padding: 5rem;
+      @include small {
+        margin-top: 45rem;
+        flex-direction: column;
+      }
+
+      .posterImage {
+        height: 30rem;
+        margin-right: 5rem;
+        @include small {
+          margin-bottom: 5rem;
+          margin-right: 0;
+        }
+      }
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+//
+$size: 9rem;
+
+.falseprogress-pie-chart {
+  position: relative;
+}
+
+@mixin circle($size) {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - #{$size/2});
+  top: calc(50% - #{$size/2});
+  width: $size;
+  height: $size;
+}
+
+.progress-pie-chart {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+  position: relative;
+  &.gt-50 {
+    background-color: $color-accent;
+  }
+}
+.ppc-progress {
+  @include circle($size);
+  clip: rect(0, $size, $size, #{$size/2});
+  .ppc-progress-fill {
+    @include circle($size);
+    clip: rect(0, #{$size/2}, $size, 0);
+    background: $color-accent;
+  }
+  .gt-50 & {
+    clip: rect(0, #{$size/2}, $size, 0);
+    .ppc-progress-fill {
+      clip: rect(0, $size, $size, #{$size/2});
+      background: $color-lightGrey;
+    }
+  }
+}
+.ppc-percents {
+  @include circle(#{$size/1.15});
+  background: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .voteAverage {
+    font-size: calc((#{$size}/ 4));
+    font-weight: bold;
+    color: $color-accent;
+  }
+  .ten {
+    font-size: calc((#{$size}/ 6));
+    font-weight: bold;
+    color: $color-accent;
+  }
+  .totalVotes {
+    font-size: calc(#{$size}/ 9);
+    font-weight: bold;
+    color: $color-mediumGrey;
+    margin-top: -0.2rem;
+  }
+}
+.pcc-percents-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
