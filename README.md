@@ -7,7 +7,7 @@
 <br/>
 <h1>Marceau (React)</h1>
 <br/>
-<p> Technical frontend test. The goal was to use the Open Movie Database to create a movie directory. The API is available <a href="http://www.omdbapi.com/">here</a>.</p><p>
+<p> Technical frontend test. The goal was to use the Open Movie Database to create a movies directory. The API is available <a href="http://www.omdbapi.com/">here</a>.</p><p>
 The demo of the project is currently hosted on Netlify (frontend). Have a look at it and feel free to give some feedback. </p>
 
 <h3>
