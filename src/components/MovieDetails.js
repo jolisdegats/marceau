@@ -24,7 +24,10 @@ const MovieDetails = () => {
   const backgroundImg =
     Object.entries(movieSelected).length > 0
       ? backdrop_path
-        ? `url(https://image.tmdb.org/t/p/original${backdrop_path})`
+        ? // Force default backdrop for "Donnie Darko" (home)
+          movieSelected.id === 141
+          ? `url(https://image.tmdb.org/t/p/original/8eLXy49T36e0e1YhYvUQOCXNRhm.jpg`
+          : `url(https://image.tmdb.org/t/p/original${backdrop_path})`
         : `url(${backdropNotFound})`
       : "";
   const posterImg =
@@ -38,6 +41,8 @@ const MovieDetails = () => {
   let deg;
   vote_average > 0 && (votePercent = vote_average * 10);
   deg = (360 * votePercent) / 100;
+
+  console.log(movieSelected);
 
   return loading ? (
     <Loader></Loader>
