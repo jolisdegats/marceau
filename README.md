@@ -23,7 +23,7 @@ Frontend : React, axios, SASS</p>
 
 <h2>Install</h2>
 
-<p>Just run <code>yarn</code> in your console to install all dependencies and <code>yarn start</code> to launch. Local demo should open on http://localhost:3000.</p>
+<p>Just run <code>yarn</code> in your IDE to install all dependencies and <code>yarn start</code> to launch. Local demo should open on http://localhost:3000.</p>
  <br/>
 
 </p><h3>COMING SOON...</h3>

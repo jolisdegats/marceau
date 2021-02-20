@@ -2,9 +2,8 @@ import React from "react";
 import { useApp } from "../stateManager/context";
 
 const SearchBar = () => {
-  const { state, actions } = useApp();
+  const { actions } = useApp();
   const { updateField } = actions;
-  const { searchBarFocus } = state;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,7 +16,7 @@ const SearchBar = () => {
         name="searchBar"
         placeholder="Search your movie here"
         onChange={handleChange}
-        onClick={() => updateField(`searchBarFocus`, !searchBarFocus)}
+        onClick={() => updateField(`searchBarFocus`, true)}
       ></input>
     </div>
   );

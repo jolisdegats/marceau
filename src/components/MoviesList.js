@@ -25,22 +25,26 @@ const MoviesList = () => {
         }
       >
         <div className="moviesListContainer">
-          {moviesList.map((movie) => {
-            const { id, title, original_title } = movie;
-            return (
-              <p
-                onClick={() =>
-                  getMovieDetails(id) &
-                  updateField(`searchBarFocus`, false) &
-                  updateField("setMobileSearch", false)
-                }
-                key={id}
-              >
-                {title}
-                {original_title !== title && ` (${original_title})`}
-              </p>
-            );
-          })}
+          {moviesList.length === 0 ? (
+            <p>Aucun résultat pour cette recherche</p>
+          ) : (
+            moviesList.map((movie) => {
+              const { id, title, original_title } = movie;
+              return (
+                <p
+                  onClick={() =>
+                    getMovieDetails(id) &
+                    updateField(`searchBarFocus`, false) &
+                    updateField("setMobileSearch", false)
+                  }
+                  key={id}
+                >
+                  {title}
+                  {original_title !== title && ` (${original_title})`}
+                </p>
+              );
+            })
+          )}
         </div>
       </div>
     )
