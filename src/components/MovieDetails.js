@@ -42,8 +42,6 @@ const MovieDetails = () => {
   vote_average > 0 && (votePercent = vote_average * 10);
   deg = (360 * votePercent) / 100;
 
-  console.log(movieSelected);
-
   return loading ? (
     <Loader></Loader>
   ) : (
@@ -69,7 +67,7 @@ const MovieDetails = () => {
                 <div className="ppc-percents">
                   <div className="pcc-percents-wrapper">
                     <p>
-                      <span className="voteAverage">{vote_average}</span>
+                      <span className="voteAverage">{Math.round(vote_average * 10) / 10}</span>
                       <span className="ten">/10</span>
                     </p>
                     <p className="totalVotes">{vote_count} votes</p>
